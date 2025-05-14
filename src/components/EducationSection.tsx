@@ -40,9 +40,9 @@ const EducationSection = () => {
       description: "Estudos focados em gerenciamento de projetos de TI, desenvolvimento de sistemas e automação de processos empresariais."
     },
     {
-      degree: "Curso Técnico em Programação",
+      degree: "Cursos na area de programação",
       institution: "Instituição Técnica",
-      period: "2021 - 2023",
+      period: "2020 - Presente",
       description: "Formação técnica em programação com foco em desenvolvimento web e linguagens como Python, JavaScript e SQL."
     }
   ];

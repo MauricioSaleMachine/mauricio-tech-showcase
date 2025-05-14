@@ -7,6 +7,37 @@ import { ThemeToggle } from './ThemeProvider';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Maurício";
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+  
+  // Typing animation effect
+  useEffect(() => {
+    let timeout: number;
+    
+    if (!isDeleting && displayText === fullText) {
+      timeout = window.setTimeout(() => {
+        setIsDeleting(true);
+        setTypingSpeed(75); // Faster when deleting
+      }, 1500); // Pause at full text
+    } else if (isDeleting && displayText === "") {
+      timeout = window.setTimeout(() => {
+        setIsDeleting(false);
+        setTypingSpeed(150); // Normal speed when typing
+      }, 800); // Pause when empty
+    } else {
+      timeout = window.setTimeout(() => {
+        if (isDeleting) {
+          setDisplayText(displayText.substring(0, displayText.length - 1));
+        } else {
+          setDisplayText(fullText.substring(0, displayText.length + 1));
+        }
+      }, typingSpeed);
+    }
+    
+    return () => window.clearTimeout(timeout);
+  }, [displayText, isDeleting, fullText, typingSpeed]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +63,10 @@ const Header = () => {
     <header className={headerClasses}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="text-2xl font-bold font-poppins">
-          <a href="#hero" className="text-blue-700">Maurício<span className="text-foreground">.</span></a>
+          <a href="#hero" className="text-blue-700">
+            <span className="inline-block min-w-[100px] font-mono">{displayText}</span>
+            <span className="text-foreground">.</span>
+          </a>
         </div>
         
         {/* Desktop Navigation */}

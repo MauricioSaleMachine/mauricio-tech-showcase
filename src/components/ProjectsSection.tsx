@@ -72,6 +72,7 @@ const ProjectsSection = () => {
       description: "Sistema integrado para leitura de arquivos PDF e envio automatizado de emails via SMTP utilizando a API Gemini. Solução para automatizar comunicações baseadas em dados extraídos de documentos.",
       tags: ["Python", "PDF Processing", "Gemini API", "SMTP"],
       githubUrl: "https://github.com/MauricioSaleMachine/Gemini-SMTP-Leitor-de-PDF",
+      image: "/lovable-uploads/cb63422a-de91-4376-b463-6f0f2e9cb4c9.png"
     }
   ];
 
