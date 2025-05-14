@@ -22,8 +22,8 @@ const EducationItem = ({ degree, institution, period, description }: EducationIt
           </div>
           <div className="md:w-3/4">
             <h3 className="text-xl font-semibold">{degree}</h3>
-            <p className="text-gray-600 mb-2">{institution}</p>
-            <p className="text-gray-700">{description}</p>
+            <p className="text-muted-foreground mb-2">{institution}</p>
+            <p className="text-foreground">{description}</p>
           </div>
         </div>
       </CardContent>
@@ -36,7 +36,7 @@ const EducationSection = () => {
     {
       degree: "Tecnologia em Gestão da Tecnologia da Informação",
       institution: "FATEC Barueri",
-      period: "2023 - Presente",
+      period: "2024 - Presente",
       description: "Estudos focados em gerenciamento de projetos de TI, desenvolvimento de sistemas e automação de processos empresariais."
     },
     {
@@ -53,7 +53,7 @@ const EducationSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Formação Acadêmica</h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Minha trajetória acadêmica me preparou com fortes bases técnicas e teóricas para atuar 
             no desenvolvimento de soluções tecnológicas inovadoras.
           </p>
@@ -62,7 +62,7 @@ const EducationSection = () => {
         <div className="flex justify-center">
           <div className="w-full lg:w-3/4">
             <div className="flex items-center mb-10">
-              <div className="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <div className="h-14 w-14 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
                 <GraduationCap className="h-7 w-7 text-blue-600" />
               </div>
               <h3 className="text-2xl font-semibold">Educação & Certificações</h3>
