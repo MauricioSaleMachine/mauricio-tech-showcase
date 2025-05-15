@@ -75,6 +75,13 @@ const ProjectsSection = () => {
       image: "/lovable-uploads/d07a382d-a2f9-4202-9bcf-7d0249b13a05.png"
     },
     {
+      title: "Desenvolvimento Web",
+      description: "Galeria de projetos web demonstrando habilidades em desenvolvimento frontend com React, TypeScript e design responsivo. Interface moderna e interativa com transições suaves e componentes reutilizáveis.",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      liveUrl: "https://web-showcase-gallery-short.lovable.app/",
+      image: "/lovable-uploads/933812b0-9c22-478c-a471-f012bc7fa4a2.png"
+    },
+    {
       title: "MailForge",
       description: "Sistema integrado para leitura de arquivos PDF e envio automatizado de emails via SMTP utilizando a API Gemini. Solução para automatizar comunicações baseadas em dados extraídos de documentos.",
       tags: ["Python", "PDF Processing", "Gemini API", "SMTP"],

@@ -54,6 +54,18 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: element.offsetTop - 80 // Offset for the fixed header
+      });
+      setIsMenuOpen(false);
+    }
+  };
   
   const headerClasses = `fixed top-0 w-full z-50 transition-all duration-300 ${
     isScrolled ? 'bg-background/90 shadow-md backdrop-blur-sm py-2' : 'bg-transparent py-4'
@@ -63,20 +75,58 @@ const Header = () => {
     <header className={headerClasses}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="text-2xl font-bold font-poppins">
-          <a href="#hero" className="text-blue-700">
+          <button 
+            onClick={() => scrollToSection('hero')}
+            className="text-blue-700"
+          >
             <span className="inline-block min-w-[100px] font-mono">{displayText}</span>
             <span className="text-foreground">.</span>
-          </a>
+          </button>
         </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            <li><a href="#sobre" className="font-medium text-foreground hover:text-blue-600 transition-colors">Sobre</a></li>
-            <li><a href="#habilidades" className="font-medium text-foreground hover:text-blue-600 transition-colors">Habilidades</a></li>
-            <li><a href="#projetos" className="font-medium text-foreground hover:text-blue-600 transition-colors">Projetos</a></li>
-            <li><a href="#formacao" className="font-medium text-foreground hover:text-blue-600 transition-colors">Formação</a></li>
-            <li><a href="#contato" className="font-medium text-foreground hover:text-blue-600 transition-colors">Contato</a></li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('sobre')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Sobre
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('habilidades')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Habilidades
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('projetos')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Projetos
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('formacao')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Formação
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('contato')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Contato
+              </button>
+            </li>
           </ul>
         </nav>
         
@@ -84,7 +134,7 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
           <Button className="bg-blue-600 hover:bg-blue-700">
-            <a href="mailto:mauricio@salemachine.com.br">Contato</a>
+            <a href="https://www.linkedin.com/in/mauricio-cerqueira-482962311/" target="_blank" rel="noopener noreferrer">Contato</a>
           </Button>
         </div>
 
@@ -104,14 +154,14 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background shadow-lg absolute w-full">
           <ul className="flex flex-col py-4">
-            <li><a href="#sobre" className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-blue-900/20" onClick={() => setIsMenuOpen(false)}>Sobre</a></li>
-            <li><a href="#habilidades" className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-blue-900/20" onClick={() => setIsMenuOpen(false)}>Habilidades</a></li>
-            <li><a href="#projetos" className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-blue-900/20" onClick={() => setIsMenuOpen(false)}>Projetos</a></li>
-            <li><a href="#formacao" className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-blue-900/20" onClick={() => setIsMenuOpen(false)}>Formação</a></li>
-            <li><a href="#contato" className="block py-2 px-4 hover:bg-blue-50 dark:hover:bg-blue-900/20" onClick={() => setIsMenuOpen(false)}>Contato</a></li>
+            <li><button onClick={() => scrollToSection('sobre')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Sobre</button></li>
+            <li><button onClick={() => scrollToSection('habilidades')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Habilidades</button></li>
+            <li><button onClick={() => scrollToSection('projetos')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Projetos</button></li>
+            <li><button onClick={() => scrollToSection('formacao')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Formação</button></li>
+            <li><button onClick={() => scrollToSection('contato')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Contato</button></li>
             <li className="px-4 pt-2">
               <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                <a href="mailto:mauricio@salemachine.com.br" className="w-full">Contato</a>
+                <a href="https://www.linkedin.com/in/mauricio-cerqueira-482962311/" className="w-full" target="_blank" rel="noopener noreferrer">Contato</a>
               </Button>
             </li>
           </ul>
