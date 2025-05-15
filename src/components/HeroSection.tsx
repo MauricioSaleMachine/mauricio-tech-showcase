@@ -51,11 +51,18 @@ const HeroSection = () => {
                 {displayText}<span className="animate-pulse">|</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
+                <Button 
+                  className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2"
+                  onClick={() => window.open("https://www.linkedin.com/in/mauricio-cerqueira-482962311/", "_blank")}
+                >
                   <Download size={18} />
-                  Baixar CV
+                  Competencias
                 </Button>
-                <Button variant="outline" className="flex items-center gap-2">
+                <Button 
+                  variant="outline" 
+                  className="flex items-center gap-2"
+                  onClick={() => window.open("https://github.com/MauricioSaleMachine?tab=repositories", "_blank")}
+                >
                   Ver projetos
                   <ArrowRight size={18} />
                 </Button>

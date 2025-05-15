@@ -1,7 +1,6 @@
-
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, LineChart, BadgeCheck } from "lucide-react";
+import { Code, LineChart, BadgeCheck, Database, BarChart4, LayoutDashboard, Briefcase } from "lucide-react";
 
 interface SkillItemProps {
   name: string;
@@ -97,6 +96,49 @@ const SkillsSection = () => {
     </svg>
   );
 
+  // Add new icons for the data skills
+  const SqlIcon = () => (
+    <Database className="h-4 w-4" />
+  );
+  
+  const DataAnalysisIcon = () => (
+    <BarChart4 className="h-4 w-4" />
+  );
+  
+  const ExcelIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet">
+      <path fill="#217346" d="M224 0H32C14.368 0 0 14.368 0 32v192c0 17.632 14.368 32 32 32h192c17.632 0 32-14.368 32-32V32c0-17.632-14.368-32-32-32z"/>
+      <path fill="#FFF" d="M181.408 180.112h-24.576l-27.904-42.912-27.904 42.912h-23.68l39.488-55.264-36.192-52.864h24.576l24.608 38.4 24-38.4h24.16l-36.096 51.168z"/>
+    </svg>
+  );
+  
+  const PowerBIIcon = () => (
+    <LayoutDashboard className="h-4 w-4" />
+  );
+
+  // Add icons for the business skills
+  const AutomationIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M12 3c-1.23 0-2.42.18-3.53.53a9.124 9.124 0 0 0-6.94 6.94C1.18 11.58 1 12.77 1 14c0 1.23.18 2.42.53 3.53a9.124 9.124 0 0 0 6.94 6.94c1.11.35 2.3.53 3.53.53c1.23 0 2.42-.18 3.53-.53a9.124 9.124 0 0 0 6.94-6.94c.35-1.11.53-2.3.53-3.53c0-1.23-.18-2.42-.53-3.53a9.124 9.124 0 0 0-6.94-6.94C14.42 3.18 13.23 3 12 3zm0 2c1.02 0 2.05.17 3 .5c1.93.67 3.5 2.07 4.37 3.9c.51 1.07.76 2.26.63 3.44c-.14 1.26-.69 2.43-1.5 3.38c-.7.82-1.76 1.14-2.75 1.28c-.6.09-1.21.09-1.81.12c-.5.03-.97.11-1.44.3c-.58.23-1.14.57-1.62.96c-.36.28-.73.59-1.02.93a6.89 6.89 0 0 0-1.13 1.69c-.17.36-.3.74-.38 1.13c-.27-.04-.53-.1-.78-.19a7.124 7.124 0 0 1-5.41-5.41C3.17 16.05 3 15.02 3 14c0-1.02.17-2.05.5-3c.67-1.93 2.07-3.5 3.9-4.37c.98-.46 2.04-.73 3.1-.81c.49-.04.99-.04 1.5.02zm2 2c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5s1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5zM7 9c-.83 0-1.5.67-1.5 1.5S6.17 12 7 12s1.5-.67 1.5-1.5S7.83 9 7 9zm0 6c-.83 0-1.5.67-1.5 1.5S6.17 18 7 18s1.5-.67 1.5-1.5S7.83 15 7 15z"/>
+    </svg>
+  );
+  
+  const ProjectManagementIcon = () => (
+    <Briefcase className="h-4 w-4" />
+  );
+  
+  const AgileIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83l3.75 3.75l1.83-1.83z"/>
+    </svg>
+  );
+  
+  const CommunicationIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+    </svg>
+  );
+
   const programmingSkills: SkillItemProps[] = [
     { name: "Python", value: 90, icon: <PythonIcon /> },
     { name: "JavaScript", value: 85, icon: <JavaScriptIcon /> },
@@ -105,17 +147,17 @@ const SkillsSection = () => {
   ];
 
   const dataSkills: SkillItemProps[] = [
-    { name: "SQL", value: 85 },
-    { name: "Data Analysis", value: 75 },
-    { name: "Excel", value: 90 },
-    { name: "Power BI", value: 70 }
+    { name: "SQL", value: 85, icon: <SqlIcon /> },
+    { name: "Data Analysis", value: 75, icon: <DataAnalysisIcon /> },
+    { name: "Excel", value: 90, icon: <ExcelIcon /> },
+    { name: "Power BI", value: 70, icon: <PowerBIIcon /> }
   ];
 
   const businessSkills: SkillItemProps[] = [
-    { name: "Automação de Processos", value: 85 },
-    { name: "Gestão de Projetos", value: 80 },
-    { name: "Metodologias Ágeis", value: 75 },
-    { name: "Comunicação Técnica", value: 85 }
+    { name: "Automação de Processos", value: 85, icon: <AutomationIcon /> },
+    { name: "Gestão de Projetos", value: 80, icon: <ProjectManagementIcon /> },
+    { name: "Metodologias Ágeis", value: 75, icon: <AgileIcon /> },
+    { name: "Comunicação Técnica", value: 85, icon: <CommunicationIcon /> }
   ];
 
   return (

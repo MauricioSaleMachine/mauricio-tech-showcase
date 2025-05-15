@@ -39,11 +39,27 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     // In a real app, you would send the form data to a backend service
-    // Here we're just simulating the form submission
     try {
-      // Simulate sending email (in a real app, you'd call an API endpoint)
+      // This would typically be an API call to your backend service
+      // For a complete solution, you would need a server-side component to handle the email forwarding
+      
+      // For demonstration purposes, we're logging the data
       console.log('Form submitted to:', 'mauricio@salemachine.com.br');
       console.log('Form data:', formData);
+      
+      // This is where you would integrate an email service like EmailJS, SendGrid, etc.
+      // For example with EmailJS:
+      // await emailjs.send(
+      //   "service_id", 
+      //   "template_id",
+      //   { 
+      //     to_email: "mauricio@salemachine.com.br",
+      //     from_name: formData.name,
+      //     from_email: formData.email,
+      //     message: formData.message
+      //   },
+      //   "user_id"
+      // );
       
       // Simulate successful submission
       setTimeout(() => {

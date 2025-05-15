@@ -51,7 +51,7 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
         {githubUrl && (
           <Button variant="outline" size="sm" className="flex items-center gap-2">
             <Github className="h-4 w-4" />
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">Código</a>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
           </Button>
         )}
         {liveUrl && (
