@@ -68,6 +68,13 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
 const ProjectsSection = () => {
   const projects: ProjectProps[] = [
     {
+      title: "NotiSynth",
+      description: "Este aplicativo em Python utiliza web scraping e inteligência artificial (via API Gemini do Google) para buscar e resumir notícias de forma personalizada. Com interface gráfica em PyQt5 e arquitetura multithread, o sistema oferece uma experiência fluida e interativa.",
+      tags: ["Python", "Web Scraping", "PyQt5", "Gemini API", "Multithread"],
+      githubUrl: "https://github.com/MauricioSaleMachine/NoticeAI",
+      image: "/lovable-uploads/d07a382d-a2f9-4202-9bcf-7d0249b13a05.png"
+    },
+    {
       title: "MailForge",
       description: "Sistema integrado para leitura de arquivos PDF e envio automatizado de emails via SMTP utilizando a API Gemini. Solução para automatizar comunicações baseadas em dados extraídos de documentos.",
       tags: ["Python", "PDF Processing", "Gemini API", "SMTP"],
@@ -88,12 +95,10 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <div className="w-full md:w-2/3 lg:w-1/2">
-            {projects.map((project, index) => (
-              <Project key={index} {...project} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <Project key={index} {...project} />
+          ))}
         </div>
       </div>
     </section>
