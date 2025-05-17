@@ -24,7 +24,6 @@ const CertificationItem = ({ name, issuer, date, skills }: CertificationProps) =
           <div className="md:w-3/4">
             <h3 className="text-xl font-semibold">{name}</h3>
             <div className="mt-3">
-              <h4 className="text-sm font-medium mb-2">Competências</h4>
               <ul className="space-y-2">
                 {skills.map((skill, index) => (
                   <li key={index} className="flex items-start">
@@ -45,10 +44,9 @@ const CertificationsSection = () => {
     {
       name: "Azure AI Fundamentals",
       issuer: "Microsoft",
-      date: "2023",
+      date: "2025",
       skills: [
-        "Inteligência Artificial na Nuvem", 
-        "Machine Learning", 
+        "Inteligência Artificial na Nuvem - Machine Learning", 
         "Processamento de Linguagem Natural",
         "Visão Computacional"
       ]
@@ -56,10 +54,9 @@ const CertificationsSection = () => {
     {
       name: "Inglês Avançado",
       issuer: "Instituto de Idiomas",
-      date: "2022",
+      date: "2024",
       skills: [
-        "Inglês Intermediário", 
-        "Escrita Técnica", 
+        "Inglês Intermediário - Escrita Técnica", 
         "Apresentações em Inglês",
         "Conversação para Negócios"
       ]
@@ -67,10 +64,9 @@ const CertificationsSection = () => {
     {
       name: "Gestão de Processos",
       issuer: "Instituto de Tecnologia",
-      date: "2021",
+      date: "2024",
       skills: [
-        "Modelagem de Processos", 
-        "Análise de Fluxo de Trabalho", 
+        "Modelagem de Processos - Análise de Fluxo de Trabalho", 
         "Otimização de Recursos",
         "Implementação de Melhorias Contínuas"
       ]
@@ -95,7 +91,7 @@ const CertificationsSection = () => {
               <div className="h-14 w-14 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
                 <Award className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-semibold">Cursos & Competências</h3>
+              <h3 className="text-2xl font-semibold">Cursos & Certificações</h3>
             </div>
 
             <div className="space-y-6">
