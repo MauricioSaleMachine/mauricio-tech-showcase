@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
@@ -38,7 +37,7 @@ const Header = () => {
     
     return () => window.clearTimeout(timeout);
   }, [displayText, isDeleting, fullText, typingSpeed]);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -121,6 +120,14 @@ const Header = () => {
             </li>
             <li>
               <button 
+                onClick={() => scrollToSection('certificacoes')} 
+                className="font-medium text-foreground hover:text-blue-600 transition-colors"
+              >
+                Certificações
+              </button>
+            </li>
+            <li>
+              <button 
                 onClick={() => scrollToSection('contato')} 
                 className="font-medium text-foreground hover:text-blue-600 transition-colors"
               >
@@ -158,6 +165,7 @@ const Header = () => {
             <li><button onClick={() => scrollToSection('habilidades')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Habilidades</button></li>
             <li><button onClick={() => scrollToSection('projetos')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Projetos</button></li>
             <li><button onClick={() => scrollToSection('formacao')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Formação</button></li>
+            <li><button onClick={() => scrollToSection('certificacoes')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Certificações</button></li>
             <li><button onClick={() => scrollToSection('contato')} className="text-left block py-2 px-4 w-full hover:bg-blue-50 dark:hover:bg-blue-900/20">Contato</button></li>
             <li className="px-4 pt-2">
               <Button className="w-full bg-blue-600 hover:bg-blue-700">

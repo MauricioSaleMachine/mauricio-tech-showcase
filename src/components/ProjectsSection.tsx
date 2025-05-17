@@ -9,6 +9,13 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ProjectProps {
   title: string;
@@ -21,7 +28,7 @@ interface ProjectProps {
 
 const Project = ({ title, description, tags, image, githubUrl, liveUrl }: ProjectProps) => {
   return (
-    <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="h-full overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
       <div className="h-48 bg-muted flex items-center justify-center">
         {image ? (
           <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -47,7 +54,7 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
       <CardContent>
         <p className="text-muted-foreground">{description}</p>
       </CardContent>
-      <CardFooter className="flex gap-3">
+      <CardFooter className="flex gap-3 mt-auto">
         {githubUrl && (
           <Button variant="outline" size="sm" className="flex items-center gap-2">
             <Github className="h-4 w-4" />
@@ -102,10 +109,22 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <Project key={index} {...project} />
-          ))}
+        <div className="max-w-6xl mx-auto">
+          <Carousel className="w-full" opts={{ align: "start" }}>
+            <CarouselContent className="py-4">
+              {projects.map((project, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                  <div className="h-full">
+                    <Project {...project} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-6">
+              <CarouselPrevious className="static mx-2 transform-none" />
+              <CarouselNext className="static mx-2 transform-none" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </section>

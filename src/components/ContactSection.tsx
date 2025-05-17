@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone, Send, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Send, Github, Linkedin, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -174,6 +174,15 @@ const ContactSection = () => {
                     <div>
                       <h4 className="font-medium">Telefone</h4>
                       <p className="text-muted-foreground">(11) 97783-8521</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-4">
+                      <MessageSquare className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium">WhatsApp</h4>
+                      <a href="https://api.whatsapp.com/send?phone=5511977838521" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Enviar mensagem</a>
                     </div>
                   </div>
                 </div>
