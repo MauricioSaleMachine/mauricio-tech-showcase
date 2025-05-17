@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Award } from "lucide-react";
+import { Award } from "lucide-react";
 
 interface CertificationProps {
   name: string;
@@ -28,7 +28,6 @@ const CertificationItem = ({ name, issuer, date, skills }: CertificationProps) =
               <ul className="space-y-2">
                 {skills.map((skill, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 shrink-0 mt-0.5" />
                     <span>{skill}</span>
                   </li>
                 ))}
@@ -59,7 +58,7 @@ const CertificationsSection = () => {
       issuer: "Instituto de Idiomas",
       date: "2022",
       skills: [
-        "Comunicação Fluente", 
+        "Inglês Intermediário", 
         "Escrita Técnica", 
         "Apresentações em Inglês",
         "Conversação para Negócios"
