@@ -68,5 +68,4 @@ LinkedIn: https://www.linkedin.com/in/mauricio-cerqueira-482962311/
 
 E-mail: mauricio@salemachine.com.br
 
-📄 Licença
-Este projeto está licenciado sob a MIT License.
+
