@@ -52,3 +52,21 @@ bun run build – Gera a versão de produção
 bun run lint – Executa análise de código com ESLint
 
 ```
+
+
+💻 Demonstração
+Você pode acessar uma versão online da vitrine técnica no seguinte link:
+
+https://mauriciosalemachine.github.io/mauricio-tech-showcase
+
+📬 Contato
+Entre em contato comigo por:
+
+GitHub: @MauricioSaleMachine
+
+LinkedIn: https://www.linkedin.com/in/mauricio-cerqueira-482962311/
+
+E-mail: mauricio@salemachine.com.br
+
+📄 Licença
+Este projeto está licenciado sob a MIT License.
