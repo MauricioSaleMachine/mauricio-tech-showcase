@@ -1,4 +1,3 @@
-
 import { ArrowUp, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
@@ -53,18 +52,18 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-        </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Maurício De Jesus Cerqueira. Todos os direitos reservados.
-          </p>
-          <button 
-            className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition-colors"
-            onClick={scrollToTop}
-          >
-            <ArrowUp size={20} />
-          </button>
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Maurício Cerqueira. Todos os direitos reservados.
+            </p>
+            <button 
+              className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition-colors"
+              onClick={scrollToTop}
+            >
+              <ArrowUp size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
