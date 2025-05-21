@@ -75,6 +75,13 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
 const ProjectsSection = () => {
   const projects: ProjectProps[] = [
     {
+      title: "Programar+",
+      description: "Projeto independente focado na curadoria e centralização de cursos na área de programação, com uma plataforma desenvolvida para oferecer uma experiência de navegação simples, acessível e eficiente, facilitando o acesso ao conhecimento e à capacitação em tecnologia.",
+      tags: ["React", "Curadoria", "Educação", "Desenvolvimento Web"],
+      liveUrl: "https://programa-plus-cursos-online.lovable.app/",
+      image: "/lovable-uploads/1c67769a-26ae-425e-a06b-6dc902bdfef9.png"
+    },
+    {
       title: "NotiSynth",
       description: "Este aplicativo em Python utiliza web scraping e inteligência artificial (via API Gemini do Google) para buscar e resumir notícias de forma personalizada. Com interface gráfica em PyQt5 e arquitetura multithread, o sistema oferece uma experiência fluida e interativa.",
       tags: ["Python", "Web Scraping", "PyQt5", "Gemini API", "Multithread"],
