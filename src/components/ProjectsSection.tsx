@@ -75,6 +75,13 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
 const ProjectsSection = () => {
   const projects: ProjectProps[] = [
     {
+      title: "TaskHub",
+      description: "Plataforma para gerenciamento de tarefas e colaboração em equipe, facilitando a organização de projetos e aumentando a produtividade através de uma interface intuitiva e funcionalidades colaborativas.",
+      tags: ["React", "Tailwind CSS", "Em desenvolvimento", "Gerenciamento"],
+      liveUrl: "https://taskhub-team-connect.lovable.app/",
+      image: "/lovable-uploads/86d9a45c-25a8-47bb-80f6-555f5ccd16b9.png"
+    },
+    {
       title: "Programar+",
       description: "Projeto independente focado na curadoria e centralização de cursos na área de programação, com uma plataforma desenvolvida para oferecer uma experiência de navegação simples, acessível e eficiente, facilitando o acesso ao conhecimento e à capacitação em tecnologia.",
       tags: ["React", "Curadoria", "Educação", "Desenvolvimento Web"],
