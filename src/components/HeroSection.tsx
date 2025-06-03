@@ -5,34 +5,35 @@ import { Download, ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
+  const [hasAnimated, setHasAnimated] = useState(false);
   const fullText = "Estudante da FATEC Barueri, 19 anos, apaixonado por tecnologia e especializado em automação de processos empresariais e desenvolvimento web.";
   const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  
+  // Programming language logos
+  const programmingLogos = [
+    { name: "JavaScript", icon: "🟨" },
+    { name: "Python", icon: "🐍" },
+    { name: "React", icon: "⚛️" },
+    { name: "TypeScript", icon: "🔷" },
+    { name: "HTML", icon: "🌐" },
+    { name: "CSS", icon: "🎨" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "Git", icon: "📦" }
+  ];
   
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (index < fullText.length) {
-          setDisplayText(fullText.substring(0, index + 1));
-          setIndex(index + 1);
-        } else {
-          setTimeout(() => {
-            setIsDeleting(true);
-          }, 1500);
-        }
-      } else {
-        if (index > 0) {
-          setDisplayText(fullText.substring(0, index - 1));
-          setIndex(index - 1);
-        } else {
-          setIsDeleting(false);
-          setTimeout(() => {}, 500);
-        }
-      }
-    }, isDeleting ? 30 : 50);
-    
-    return () => clearTimeout(timeout);
-  }, [index, isDeleting, fullText]);
+    if (!hasAnimated && index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(fullText.substring(0, index + 1));
+        setIndex(index + 1);
+      }, 50);
+      
+      return () => clearTimeout(timeout);
+    } else if (index === fullText.length && !hasAnimated) {
+      setHasAnimated(true);
+      setDisplayText(fullText);
+    }
+  }, [index, hasAnimated, fullText]);
 
   return (
     <section id="hero" className="pt-28 pb-16 md:pt-36 md:pb-24">
@@ -42,13 +43,14 @@ const HeroSection = () => {
             <div className="animate-fade-in opacity-0" style={{ animationDelay: "0.2s" }}>
               <p className="text-blue-600 font-medium mb-2">👋 Olá, eu sou</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4">
-                Maurício De Jesus Cerqueira
+                Mauricio Cerqueira
               </h1>
               <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-200 mb-6">
                 Desenvolvedor e Programador
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg h-24">
-                {displayText}<span className="animate-pulse">|</span>
+                {displayText}
+                {!hasAnimated && <span className="animate-pulse">|</span>}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -74,15 +76,31 @@ const HeroSection = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-40"></div>
               <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-1">
                 <div className="h-full w-full bg-white dark:bg-gray-800 rounded-xl flex items-center justify-center overflow-hidden">
-                  <div className="text-center p-1">
-                    <div className="w-44 h-44 md:w-56 md:h-56 rounded-full mx-auto mb-4 overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/1bfd5a1a-b5b7-40f8-ae08-3507f13f717a.png" 
-                        alt="Maurício Cerqueira" 
-                        className="w-full h-full object-cover"
-                      />
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 overflow-hidden">
+                      <div className="flex animate-scroll-infinite">
+                        {/* First set of logos */}
+                        {programmingLogos.map((logo, index) => (
+                          <div
+                            key={`first-${index}`}
+                            className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 mx-2 flex items-center justify-center text-3xl md:text-4xl bg-gray-100 dark:bg-gray-700 rounded-lg"
+                            title={logo.name}
+                          >
+                            {logo.icon}
+                          </div>
+                        ))}
+                        {/* Duplicate set for seamless loop */}
+                        {programmingLogos.map((logo, index) => (
+                          <div
+                            key={`second-${index}`}
+                            className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 mx-2 flex items-center justify-center text-3xl md:text-4xl bg-gray-100 dark:bg-gray-700 rounded-lg"
+                            title={logo.name}
+                          >
+                            {logo.icon}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <h3 className="font-medium text-gray-800 dark:text-gray-200">Maurício Cerqueira</h3>
                   </div>
                 </div>
               </div>
