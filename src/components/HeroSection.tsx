@@ -7,32 +7,22 @@ const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Estudante da FATEC Barueri, 19 anos, apaixonado por tecnologia e especializado em automação de processos empresariais e desenvolvimento web.";
   const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
   
   useEffect(() => {
+    if (animationComplete) return;
+    
     const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (index < fullText.length) {
-          setDisplayText(fullText.substring(0, index + 1));
-          setIndex(index + 1);
-        } else {
-          setTimeout(() => {
-            setIsDeleting(true);
-          }, 1500);
-        }
+      if (index < fullText.length) {
+        setDisplayText(fullText.substring(0, index + 1));
+        setIndex(index + 1);
       } else {
-        if (index > 0) {
-          setDisplayText(fullText.substring(0, index - 1));
-          setIndex(index - 1);
-        } else {
-          setIsDeleting(false);
-          setTimeout(() => {}, 500);
-        }
+        setAnimationComplete(true);
       }
-    }, isDeleting ? 30 : 50);
+    }, 50);
     
     return () => clearTimeout(timeout);
-  }, [index, isDeleting, fullText]);
+  }, [index, fullText, animationComplete]);
 
   return (
     <section id="hero" className="pt-28 pb-16 md:pt-36 md:pb-24">
@@ -42,13 +32,14 @@ const HeroSection = () => {
             <div className="animate-fade-in opacity-0" style={{ animationDelay: "0.2s" }}>
               <p className="text-blue-600 font-medium mb-2">👋 Olá, eu sou</p>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4">
-                Maurício De Jesus Cerqueira
+                Maurício Cerqueira
               </h1>
               <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-200 mb-6">
                 Desenvolvedor e Programador
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg h-24">
-                {displayText}<span className="animate-pulse">|</span>
+                {displayText}
+                {!animationComplete && <span className="animate-pulse">|</span>}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
