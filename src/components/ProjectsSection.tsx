@@ -75,6 +75,13 @@ const Project = ({ title, description, tags, image, githubUrl, liveUrl }: Projec
 const ProjectsSection = () => {
   const projects: ProjectProps[] = [
     {
+      title: "PersAi",
+      description: "Plataforma inteligente de criação e personalização de links com IA. Sistema avançado que utiliza inteligência artificial para gerar links personalizados, otimizar URLs e criar experiências de navegação únicas e dinâmicas para usuários.",
+      tags: ["IA", "Link Generation", "React", "Personalização", "Automation"],
+      liveUrl: "https://persai-link-forge.lovable.app/",
+      image: "/lovable-uploads/persai-logo.png"
+    },
+    {
       title: "TaskHub",
       description: "Plataforma para gerenciamento de tarefas e colaboração em equipe, facilitando a organização de projetos e aumentando a produtividade através de uma interface intuitiva e funcionalidades colaborativas.",
       tags: ["React", "Tailwind CSS", "Em desenvolvimento", "Gerenciamento"],
